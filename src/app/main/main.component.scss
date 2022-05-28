@@ -1,0 +1,92 @@
+
+.main-container{
+
+    .left-panel{
+        width: 220px;
+        height: 800px;
+        // border: 1px solid #000;
+        border-left: 0;
+        position: fixed;
+        left: 80px;
+        top: 50%;
+        background: #dfdfdf;
+        transform: translate(0%, -50%);
+        overflow-y: auto;
+    }
+    
+    
+    
+    .right-panel{
+        width: 100%;
+        min-height: 100vh;
+        background-image: url(../../assets/images/background/bg_main_1.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        // margin-left: 220px;
+        .right-panel-overlay{
+            background: linear-gradient(222deg, #1c1c1c6e, #383838);
+            padding: 25px 0;
+        }
+
+        .right-side-button{
+            position: fixed;
+            right: 30px;
+            bottom: 50%;
+
+            button{
+                width: 70px;
+                height: 70px;
+                border: 1px  solid #ff7979;
+                border-radius: 50%;
+                background: #e91e63;
+                img{
+                    pointer-events: none;
+                    width: 100%;
+                }
+            }
+            
+        }
+
+        .inner{
+            width: 1200px;
+            height: calc(100% - 50px);
+            background: #ffffff;
+            margin: 0 auto;
+            box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+            .main-header{
+                border-bottom: 2px dashed #cfcfcf;
+                padding: 10px 20px;
+                display: flex;
+                justify-content: space-between;
+                .button-section{
+                    button{
+                        padding: 0px 10px;
+                        border-radius: 0px;
+                        background: #e91e63;
+                        color: #fff;
+                        font-weight: 500;
+                        font-size: 13px;
+                        height: 30px;
+                        min-width: 150px;
+                        line-height: 28px;
+                        /* padding: 0; */
+                        border-top-left-radius: 40px;
+                        border-bottom-right-radius: 40px; 
+                        &:focus{
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+            .main-body{
+                padding: 20px;
+
+            }
+        }
+        
+    }
+    
+}
+

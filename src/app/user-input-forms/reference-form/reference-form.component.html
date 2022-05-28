@@ -1,0 +1,39 @@
+<modal class="basic-information-form-modal" #referenceForomModal>
+    <!-- <div class="modal-header">
+     
+    </div> -->
+
+    <div class="modal-body">
+        <button type="button" class="close-btn" (click)="closeReferenceFormModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        <div >
+            <h5 class="form-title text-center" id="exampleModalLongTitle">Please enter your basic information </h5>
+        </div>
+
+            <form class="basic-informaton-form" [formGroup]="referenceForm" (ngSubmit)="submitReferenceForm(referenceForm.value)">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" class="form-control" formControlName="name" placeholder="Name" aria-label="Name">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" class="form-control" formControlName="designation" placeholder="Designation" aria-label="email">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" class="form-control" formControlName="organizationName" placeholder="Organization Name">
+                </div>
+
+                 
+ 
+                <button type="submit" class="btn submit-btn float-right"  >submit</button>
+            </form>
+    </div>
+  </modal>

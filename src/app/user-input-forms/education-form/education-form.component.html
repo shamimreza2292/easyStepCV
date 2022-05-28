@@ -1,0 +1,38 @@
+
+<modal #educationFormModal>
+      <div class="modal-body">
+        <h5 class="modal-title" id="exampleModalLongTitle">Create/update your skil</h5>
+        <button type="button" class="close-btn" (click)="closeEducationFormModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <form [formGroup]="educationFrom" (submit)="onEducationFormSubmit(educationFrom.value)">
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <!-- <label>Name of Degree</label> -->
+            <input type="text" class="form-control" placeholder="Name of degree" formControlName="nameOfDegree">
+          </div>
+    
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+              <!-- <label>Name Of Institute</label> -->
+              <input type="text" class="form-control" placeholder="Name Of Institute" formControlName="nameOfInstitute">
+          </div>   
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <!-- <label>Passing Year</label> -->
+            <input type="number" class="form-control" placeholder="Passing Year" formControlName="passingYear">
+        </div>  
+          
+          <!-- <button type="button" class="btn btn-secondary" (click)="closeEducationModal()">cancle</button> -->
+          <button type="submit" class="btn submit-btn float-right ml-2">submit</button>
+    
+        </form>
+      </div>   
+</modal>

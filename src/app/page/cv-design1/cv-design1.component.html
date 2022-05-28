@@ -1,0 +1,239 @@
+<div class="doc-design1" id="cv-1" >
+    <table style="width: 100%;">
+        <tbody >
+            <tr >
+                <td width="88%">                    
+                    <div>
+                        <span style="text-transform: uppercase; font-size: 18px; font-weight: bold;"> {{basicInfoData ? basicInfoData.data.name : "Emolan Johan"}}</span> <br>
+                        <span style="font-size: 14px;"><strong>Address:</strong> {{basicInfoData ? basicInfoData.data.address : "uttara dhaka - 1230, bangladesh"}} <br>
+                        <strong>Email:</strong>  {{basicInfoData ? basicInfoData.data.email : "jon@gmail.com"}} <br>
+                        <strong>Phone:</strong>  {{basicInfoData ? basicInfoData.data.phoneNumber : "0158525525525"}}
+                       </span>
+                    </div>
+                    <button class="btn btn-sm edit-btn" *ngIf="isCvOnEditMode" (click)="openBasicInformationForm(basicInfoData)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                </td>
+                <td>
+                    <img width="100" height="100" src="https://majedesigns.com.au/wp-content/uploads/2017/08/profile-pic-200x200-final.jpg" alt="profile_image">
+                </td>
+            </tr>
+            <!-- <tr>
+                <td colspan="2" style="border-top: 1px solid #d5d5d5; width: 100%;"></td>
+            </tr> -->
+        </tbody>
+    </table>
+
+
+<table style="width: 100%; margin-bottom: 20px;">
+    <tbody>
+     <tr>
+         <td style="padding-top: 0px;">            
+             <div style=" background: #dfdfdf; padding: 0px 0 2px 10px; margin: 20px 0 15px ; font-size: 14px; font-weight: bold;">
+                 <span>Objective</span>  <button *ngIf="isCvOnEditMode" class="btn btn-sm float-right edit-btn" (click)="onObjectiveCreateOrEdit()" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+             </div>           
+         </td>
+     </tr>            
+     <tr>
+         <td>  
+             
+            <span *ngIf="basicInfoData && basicInfoData.data.objective ">{{basicInfoData.data.objective}}</span>
+             <span *ngIf="!basicInfoData || !basicInfoData.data.objective" style="font-size: 14px;">Lorem Ipsum is simply dummy text of the printing and
+                 typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                 when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has 
+                 survived not only five centuries, but also the leap into electronic
+                 typesetting, remaining essentially unchanged. It was popularised </span>           
+         </td>
+     </tr>
+</tbody>
+</table>
+
+
+<table style="width: 100%;">
+        
+    <tr>
+        <td style="width: 70%; padding-right: 25px; vertical-align: top; border-right: 1px solid #dfdfdf;">
+            <!-- experience -->
+            <div style=" background: #dfdfdf; padding: 0px 0 2px 10px; font-size: 14px; font-weight: bold;">
+                <span>Experience</span>  <button class="btn btn-sm float-right create-btn" *ngIf="isCvOnEditMode" (click)="onworkExperienceCreate()" >Create</button>
+            </div>
+            <div *ngIf="workExperienceData" style="width: 100%;">
+                <div *ngFor="let exData of workExperienceData;">
+                    <button class="btn btn-sm float-right edit-btn" *ngIf="isCvOnEditMode" (click)="onworkExperienceEdit(exData)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                    <div style="list-style: disc; margin-top: 15px; display: block; font-size: 14px;">
+                        <span style="font-weight: bold;"> {{exData.designation}} | {{exData.companyName}} </span> <br>
+                        <span style="font-size: 11px; font-weight: bold;">{{dateTimeService.dateFormat(exData.startDate)}} - {{exData.continuing ? exData.continuing : dateTimeService.dateFormat(exData.endDate)}}</span> <br> 
+                        <span style="display: inline-block;">{{exData.responsibilities}}</span>
+                    </div> 
+
+                </div>
+            </div>
+
+            <div *ngIf="!workExperienceData" style="width: 100%;">
+                <div>
+                    <div style="list-style: disc; margin-top: 15px; display: block; font-size: 14px;">
+                        <span style="font-weight: bold;"> Frontend Developer | company name at Uttara Dhaka, Bangladesh</span> <br>
+                        <span style="font-size: 11px; font-weight: bold;">1/4/2018 - continue</span> <br> 
+                        <span style="display: inline-block;">Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
+                    </div> 
+                    <div style="list-style: disc; margin-top: 15px; display: block; font-size: 14px;">
+                        <span style="font-weight: bold;"> Frontend Developer | company name at Uttara Dhaka, Bangladesh</span> <br>
+                        <span style="font-size: 11px; font-weight: bold;">1/4/2018 - 30/5/2020</span> <br> 
+                        <span style="display: inline-block;">Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
+                    </div> 
+                     
+                </div>
+            </div>
+
+
+            <!-- personal details -->
+            <div style="background: #dfdfdf; padding: 0px 0 2px 10px; font-size: 14px; font-weight: bold; margin-top: 20px;">
+                <span>Personal Details</span> <button class="btn btn-sm float-right edit-btn" *ngIf="isCvOnEditMode" (click)="openPersonalDetailsForm()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+            </div>
+
+            <div style="margin-top: 10px; font-size: 14px;">
+                    <span style="font-weight: bold">Father's Name: </span> <span> {{basicInfoData ? basicInfoData.data.fatherName : "write down your father's name"}} </span> <br>
+                    <span style="font-weight: bold">Mother's Name: </span> <span> {{basicInfoData ? basicInfoData.data.motherName : "write down your mother's name"}} </span> <br>
+                    <span style="font-weight: bold">Date of Birth: </span> <span> {{basicInfoData ? basicInfoData.data.dateOfBirth : "12/25/1980"}} </span> <br>
+                    <span style="font-weight: bold">Gender: </span> <span> {{basicInfoData ? basicInfoData.data.gender : 'Male'}}</span> <br>
+                    <span style="font-weight: bold">Marital Status : </span> <span>{{basicInfoData ? basicInfoData.data.maritalStatus : 'status'}} </span> <br>
+                    <span style="font-weight: bold">Nationality: </span> <span>{{basicInfoData? basicInfoData.data.nationality : 'Bangladeshi'}} </span> <br>
+                    <span style="font-weight: bold">Religion: </span> <span> {{basicInfoData ? basicInfoData.data.religion : "Islam"}} </span> <br>
+                    <span style="font-weight: bold">Current Location: </span> <span> {{basicInfoData ? basicInfoData.data.currentLocation : 'Dhaka'}}</span> <br>
+
+            </div>
+
+
+            <!-- refarence -->
+            <div style="background: #dfdfdf; padding: 0px 0 2px 10px; font-size: 14px; font-weight: bold; margin-top: 20px;">
+                <span>Reference</span> <button class="btn btn-sm float-right create-btn" *ngIf="isCvOnEditMode" (click)="onCreateReference()">Create</button>
+            </div>
+
+            <div *ngIf="references.length == 0">
+                <div style="margin-top: 10px; font-size: 14px;">
+                    <span>Person Name</span> <br>
+                    <span>Designation</span> <br>
+                    <span>Organization Name</span> <br>
+                </div>
+                <div style="margin-top: 10px; font-size: 14px;">
+                    <span>Person Name</span> <br>
+                    <span>Designation</span> <br>
+                    <span>Organization Name</span> <br>
+                </div>                 
+            </div>
+
+            <div *ngIf="references.length > 0">
+             
+                <div *ngFor="let reference of references"  style="margin-top: 10px; font-size: 14px;" >
+                    <button class="btn btn-sm float-right edit-btn" *ngIf="isCvOnEditMode" (click)="onEditReference(reference)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                    <div>
+                        <span>{{reference.name}}</span> <br>
+                        <span>{{reference.designation}}</span> <br>
+                        <span>{{reference.organizationName}}</span> <br>
+                    </div>
+                </div>
+                              
+            </div>
+
+
+        </td>
+
+
+        
+        <td style="width: 30%; vertical-align: top; padding-left: 25px ;">
+
+            <div style=" background: #dfdfdf; padding: 0px 0 2px 10px; margin: 0 0 15px ; font-size: 14px; font-weight: bold;">
+                <span >Skills</span> <button class="btn btn-sm float-right create-btn" *ngIf="isCvOnEditMode" (click)="onSkillCreate()">Create</button>
+            </div>
+             
+
+                <div>
+
+                    <div *ngIf="skilsData" style="font-size: 14px;">
+                        <div style="height: 25px;" *ngFor="let skillItem of skilsData " >
+                            <span style="list-style: disc; width: 45%;">{{skillItem.skilName}}</span>
+                            <button class="btn btn-sm float-right edit-btn" *ngIf="isCvOnEditMode" (click)="onSkillEdit(skillItem)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                        </div>                        
+                        <br>
+                    </div>
+
+
+                    <div *ngIf="!skilsData" style="font-size: 14px;">
+                        <span style="list-style: disc; width: 45%;"> html</span> <br>
+                        <span style="list-style: disc; width: 45%;"> css</span> <br>
+                        <span style="list-style: disc;"> angular 10</span> <br>
+                        <span style="list-style: disc;"> javascript</span> <br>
+                        <span style="list-style: disc;"> node.js</span> <br>
+                        <span style="list-style: disc;"> typeScript</span> <br>
+                        <span style="list-style: disc;"> angular 10</span> <br>
+                        <span style="list-style: disc;"> javascript</span> <br>
+                        <span style="list-style: disc;"> node.js</span> <br>
+                        <span style="list-style: disc;"> typeScript</span> <br>
+                        <span style="list-style: disc;"> html</span> <br>
+                        <span style="list-style: disc;"> css</span> <br>
+                        <span style="list-style: disc;"> angular 10</span> <br>
+                        <span style="list-style: disc;"> javascript</span> <br>
+                        <span style="list-style: disc;"> node.js</span> <br>
+                        <span style="list-style: disc;"> typeScript</span> <br>
+                        <span style="list-style: disc;"> angular 10</span> <br>
+                        <span style="list-style: disc;"> javascript</span> <br>
+                        <span style="list-style: disc;"> node.js</span> <br>
+                       
+                    </div>
+                </div>
+
+
+            <div style=" background: #dfdfdf; padding: 0px 0 2px 10px; margin: 20px 0 15px; font-size: 14px; font-weight: bold;">
+                <span>Education</span> <button class="btn btn-sm float-right create-btn" *ngIf="isCvOnEditMode" (click)="onCreateEducation()">Create</button>
+            </div>
+
+            <div *ngIf="educations" >
+                <div *ngFor="let edu of educations" style="list-style: disc; margin-bottom: 10px; font-size: 14px; display: flex;">
+                    <div style="width: calc(100% - 30px);">
+                        <span>{{edu.nameOfDegree}} - {{edu.passingYear}}</span><br>
+                        <span>{{edu.nameOfInstitute}}</span>
+                    </div>
+                    <button class="btn btn-sm float-right edit-btn" *ngIf="isCvOnEditMode" (click)="onEditEducation(edu)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                </div>                
+            </div>
+
+
+            <div *ngIf="!educations">
+                    <div style="list-style: disc; margin-bottom: 10px; font-size: 14px;">
+                        <span>B.S.C - 2222 </span><br>
+                        <span>Name of institute, Dhaka, Bangladesh</span>
+                    </div>
+                    <div style="list-style: disc; margin-bottom: 10px; font-size: 14px;">
+                        <span>B.S.C - 2222 </span><br>
+                        <span>Name of institute, Dhaka, Bangladesh</span>
+                    </div>
+                    <div style="list-style: disc; margin-bottom: 10px; font-size: 14px;">
+                        <span>B.S.C - 2222 </span><br>
+                        <span>Name of institute, Dhaka, Bangladesh</span>
+                    </div>
+            </div>
+            
+
+
+        </td>
+
+    </tr>
+   </table>
+
+
+
+</div>
+
+<basic-information-form #basicInformationFormModal ></basic-information-form>
+
+<objective-form #objectiveFormModal></objective-form>
+
+<work-experience-form #workExperienceModal></work-experience-form>
+
+<personal-details-form #personalDetailsFormModal></personal-details-form>
+
+<skills-form #skillFormModal></skills-form>
+
+<education-form #educationFormModal></education-form>
+
+<reference-form  #referenceFormModal></reference-form>

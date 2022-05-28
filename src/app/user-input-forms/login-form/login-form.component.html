@@ -1,0 +1,53 @@
+<modal #loginModal>
+    <!-- <div class="modal-header">
+     
+    </div> -->
+
+    <div class="modal-body login-modal-body">
+      <button type="button" class="close-btn" (click)="closeLoginModal()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+     <div class="login-form-body">
+      <div class="left-side">
+        <img src="../../../assets/images/login-image.png" alt="image">
+      </div>
+
+      <div class="right-side">
+
+        <h4 class="text-center">Please Login for edit cv</h4>
+        <p class="donothaveaccount-text">Don't have an account? Please <a href="#">create your account</a> it's take less then one minute.</p>
+
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="lonin(this.loginForm.value)">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input type="email" class="form-control " 
+                   formControlName="email"
+                   placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input type="password" class="form-control"
+                   formControlName="password"
+                   placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+          </div>
+
+          <div class="forget-password-text"><a href="#">Forget password?</a></div>
+
+          <button #clossButton type="button" class="btn cancel-btn mr-3" (click)="closeLoginModal()">Cancel</button>
+          <button type="submit" class="btn submit-btn">Login</button>
+        </form>
+      </div>
+     </div>
+
+         
+            
+
+        <!-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div> -->
+       
+    </div>
+
+  </modal>

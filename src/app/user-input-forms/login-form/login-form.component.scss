@@ -1,0 +1,63 @@
+
+
+.login-modal-body{
+.login-form-body{
+    display: flex;
+    align-items: stretch;
+    min-height: 400px;
+    width: 100%;
+    .left-side{
+        width: 500px;
+        img{
+            width: 100%;
+        }
+    }
+    .right-side{
+        width: 500px;
+        padding: 20px;
+        h4{
+            font-size: 25px;
+        }
+        .donothaveaccount-text{
+            margin: 10px 0 35px;
+        }
+        .login-form {
+            .input-group:nth-of-type(1){
+                margin-bottom: 30px;
+            }
+            // .input-group{
+            //     .input-group-prepend{
+            //         span{
+            //             background: #ff725e;
+            //             color: #fff;
+            //             border: 0;
+            //         }
+            //     } 
+            //     input{
+            //         border: 0;
+            //         border-bottom: 2px dashed #ff725e;
+            //         border-radius: 0;
+            //         margin-left: 1px;
+            //         color: #000;
+            //         font-size: 14px;
+            //         height: 38px;
+            //     }
+            // }
+          
+        }
+
+        .forget-password-text{
+            margin-bottom: 40px;
+            margin-top: 10px;
+            color: #383838;
+            font-size: 14px;
+            text-decoration: underline;
+            text-align: right;
+            a{
+                color: #383838;
+            }
+        }
+    }
+}
+
+}

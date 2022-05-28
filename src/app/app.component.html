@@ -1,0 +1,119 @@
+
+
+<spinner></spinner>
+
+<main-container></main-container>
+
+
+<!-- modal  -->
+  <modal #loginModal>
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Please Login for edit cv.</h5>
+      <button type="button" class="close" (click)="closeLoginModal()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="modal-body">
+
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Login</a>
+          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Signup</a>
+          <!-- <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a> -->
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+          <form [formGroup]="loginForm" (ngSubmit)="lonin(this.loginForm.value)">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+              </div>
+              <input type="email" class="form-control" 
+                     formControlName="email"
+                     placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+              </div>
+              <input type="password" class="form-control"
+                     formControlName="password"
+                     placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+            </div>
+            <button #clossButton type="button" class="btn btn-secondary mr-3" (click)="closeLoginModal()">Close</button>
+            <button type="button" class="btn btn-primary" (click)="lonin(loginForm.value)" >Login</button>
+          </form>
+        </div>
+
+
+
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <!-- <form [formGroup]="loginForm" (ngSubmit)="loginSubmit(this.loginForm.value)">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+              </div>
+              <input type="email" class="form-control" 
+                     formControlName="userEmail"
+                     placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+              </div>
+              <input type="password" class="form-control"
+                     formControlName="userPassword"
+                     placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+              </div>
+              <input type="password" class="form-control"
+                  
+                     placeholder="Confirm Password" aria-label="Confirm Password" aria-describedby="basic-addon1">
+            </div>
+            <button #clossButton type="button" class="btn btn-secondary mr-3" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" >signup</button>
+          </form> -->
+        </div>
+
+
+
+        <!-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div> -->
+      </div>
+       
+    </div>
+
+  </modal>
+
+
+  <!-- // download modal -->
+
+<!-- <modal #DownloadModal>
+    
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Download your cv</h5>
+        <button type="button" class="close" (click)="closeDownloadModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="max-height: 650px; overflow: auto;">
+        <button type="button" class="btn btn-primary" (click)="docFileDownload()" >download</button>
+
+        <p>Do you want to download your cv ?</p>   
+        <doc-design1  #doc id="cvDocxBody"></doc-design1>         
+      </div>
+
+      <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="closeDownloadModal()">No</button>
+            <button type="button" class="btn btn-primary" (click)="onDownloadOkeyBtnClick()" >Ok</button>
+      </div> 
+    
+
+</modal> -->
+ 
+
+ 

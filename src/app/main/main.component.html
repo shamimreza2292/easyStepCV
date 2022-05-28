@@ -1,0 +1,48 @@
+<div class="container-fluid main-container">
+    <div class="row">
+
+        <div class="left-panel" #leftPanel>
+            <!-- navigation part --> 
+            <left-panal-nav></left-panal-nav>
+        </div>
+      
+      
+        <div class="right-panel">
+            <div class="right-panel-overlay">
+                <div class="right-side-button">
+                    <button class="btn"><img src="../../assets/images/download.png" alt=""></button>
+                </div>
+                <div class="inner" #mainbody>
+                    <!-- afdasdfa we  -->
+                    <header class="main-header">
+                        <p>Design your own cv</p>
+                        <div class="button-section">
+                            <button class="btn " *ngIf="isLoggedIn" (click)="onEditCv()"> {{dataService.isCvOnEditMode ? "Stop Editing CV" : "Edit your CV" }} </button>
+                            <button class="btn ml-2" *ngIf="!isLoggedIn" (click)="onSignupModalOpen()">Create your cv</button>
+                            <button class="btn ml-2" *ngIf="!isLoggedIn" (click)="onLoginBtnClick()">Login</button>
+                            <button class="btn ml-2" *ngIf="isLoggedIn" (click)="opemDownloadModal()">Download</button>
+                            <button class="btn ml-2" *ngIf="isLoggedIn" (click)="onLogoutButtonClick()">Logout</button>
+                        </div>
+                    </header>
+    
+                    <div class="main-body" id="cvDocxBody">
+                        <router-outlet></router-outlet> 
+                    </div>
+                  
+                </div>
+            </div>
+          
+        </div>  
+
+    </div>
+</div>
+
+
+
+
+
+<login-form [isOpenLoginForm]="isLoginFormOpen" (isLoginFormClose)="isLoginFormClose()" ></login-form>
+
+<signup-form [isSignupModalOpen]="isSignupFormOpen" (isSignupModalClose)="onSignupModalClose()"></signup-form>
+
+<cv-download #cvDownloadModal ></cv-download>

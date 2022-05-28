@@ -1,0 +1,55 @@
+.modal-background:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ff725e;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.modal-dialog-centered{
+    max-width: initial;
+    width: 1000px;  
+}
+
+// .modal-body{
+
+.modal{
+
+    .modal-body{
+        .close-btn{
+            position: absolute; 
+            top: -43px;
+            right: -43px;
+            border: 0;
+            padding: 0;
+            background: transparent;
+            
+            span{
+                display: block;
+                background: #ffffff;
+                width: 45px;
+                height: 45px;
+                line-height: 37px;
+                border: 0;
+                color: #000000;
+                font-size: 28px;
+                font-weight: bold;
+            }
+        }
+
+        .cancel-btn{
+            width: 48%;
+            min-width: 100px;
+            background: #404040;
+            color: #fff;
+        }
+        .submit-btn{
+            width: 48%;
+            background: #ff725e;
+            min-width: 100px;
+            color: #fff;
+        }
+    }
+}

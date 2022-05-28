@@ -1,0 +1,69 @@
+
+
+<modal #workExperienceModal>
+    
+    <!-- <div class="modal-header">
+       
+      </div> -->
+      <div class="modal-body">
+        <h5 class="modal-title" id="exampleModalLongTitle">Create/update your skil</h5>
+        <button type="button" class="close-btn" (click)="closeWorkExperienceModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <form [formGroup]="workExperienceForm" (submit)="onworkExperienceFormSubmit(workExperienceForm.value)">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <!-- <label>Company Name</label> -->
+            <input type="text" class="form-control" placeholder="Company Name" formControlName="companyName">
+          </div>
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Designation" formControlName="designation">
+          </div>
+
+          <div class="input-group">
+            <!-- <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div> -->
+            <textarea type="text" class="form-control" rows="5" placeholder="Responsibilities" formControlName="responsibilities"></textarea>
+          </div>
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input type="date" class="form-control" placeholder="Start Date (mm/dd/yy)" formControlName="startDate">
+          </div>
+
+          <div class="form-check mb-10">
+            <!-- <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div> -->
+            <input type="checkbox" class="form-check-input" (click)="onContinueCheckBoxClick($event)" id="continue" formControlName="continuing">
+            <label class="form-check-label" for="continue">Continuing</label>
+          </div>
+
+          
+          
+    
+          <div class="input-group" *ngIf="!isCountinueWork">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+              <input type="date" class="form-control" placeholder="End Date (mm/dd/yy)" formControlName="endDate">
+          </div>   
+         
+          
+          <button type="button" class="btn btn-secondary" (click)="closeWorkExperienceModal()">cancle</button>
+          <button type="submit" class="btn btn-primary ml-2">submit</button>
+    
+        </form>
+      </div>
+    
+
+</modal> 
