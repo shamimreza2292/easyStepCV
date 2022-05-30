@@ -4,14 +4,9 @@ import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 // import { NameAndDesignationComponent } from './page/name-and-designation/name-and-designation.component';
-import { AboutAndContactComponent } from './page/about-and-contact/about-and-contact.component';
-import { WorkExperienceComponent } from './page/work-experience/work-experience.component';
-import { EducationComponent } from './page/education/education.component';
 import { AwardsComponent } from './page/awards/awards.component';
-import { SkilComponent } from './page/skil/skil.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { ContactMeComponent } from './page/contact-me/contact-me.component';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { authInterceptor } from './services/auth/auth.interceptor';
