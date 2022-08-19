@@ -48,11 +48,11 @@ import { SpinnerService } from './shared/spinner/spinner.service';
 
  
   providers: [
-    {
-      provide : HTTP_INTERCEPTORS,
-      useClass: authInterceptor,
-      multi: true
-    },
+    // {
+    //   provide : HTTP_INTERCEPTORS,
+    //   useClass: authInterceptor,
+    //   multi: true
+    // },
   ],
   exports:[
   ],

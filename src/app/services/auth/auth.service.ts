@@ -10,8 +10,8 @@ import { DataService } from '../data.service';
 })
 export class AuthService {
 
-  baseUrl = 'http://localhost:4000/api/'
-  // baseUrl = 'https://cvbackendapi.herokuapp.com/api/'
+  // baseUrl = 'http://localhost:4000/api/'
+  baseUrl = 'https://cvbackendapi.herokuapp.com/api/'
   storeToken = new Subject<any>();
   onStoreToken = this.storeToken.asObservable();
   userData: {};

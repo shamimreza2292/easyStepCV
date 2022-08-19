@@ -9,7 +9,7 @@ import { SpinnerService } from '../shared/spinner/spinner.service';
 })
 export class HttpServiceService {
 
-  //baseUrl = 'http://localhost:4000/api/'
+  // baseUrl = 'http://localhost:4000/api/'
   baseUrl = 'https://cvbackendapi.herokuapp.com/api/'
 
   options: {} = {
